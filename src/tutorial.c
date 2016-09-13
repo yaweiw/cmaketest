@@ -4,7 +4,7 @@
 #include "inc\TutorialConfig.h"
 
 #ifdef USE_MYMATH
-#include "MathFunctions.h"
+#include "src\MathFunctions\MathFunctions.h"
 #endif
 
 int main(int argc, char *argv[])
