@@ -1,6 +1,11 @@
 cmake_minimum_required (VERSION 2.8)
 project (Tutorial)
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)  # put .exe and .dll files here
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)  # put .so files here (if you ever build on Linux)
+set(CMAKE_MODULE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)  # put .dll and .so files for MODULE targets here
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)  # put .lib files here
+
 # The version number.
 set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
@@ -36,4 +41,4 @@ target_link_libraries (Tutorial MathFunctions)
 # add the install targets
 install (TARGETS Tutorial DESTINATION ${PROJECT_BINARY_DIR}/bin)
 install (FILES "${PROJECT_BINARY_DIR}/inc/TutorialConfig.h"
-                  DESTINATION ${PROJECT_BINARY_DIR}/include)
+                  DESTINATION ${PROJECT_BINARY_DIR}/inc)
